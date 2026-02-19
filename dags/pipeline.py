@@ -72,15 +72,15 @@ with DAG(
     catchup=False,
     default_args=default_args,
     params={
-        "full_load": Param(
-            default=False,
-            type="boolean",
-            description="Whether to run full load"
-        ),
-        "batch_size": Param(
-            default=5,
+        "customer_id": Param(
             type="integer",
-            description="Number of dynamic tasks"
+            default=0,
+            description="Customer identifier" 
+        ),
+        "full_load": Param(
+            type="boolean",
+            default=False,
+            description="Whether to run full load"
         ),
     },
     tags=["demo", "complex"],
