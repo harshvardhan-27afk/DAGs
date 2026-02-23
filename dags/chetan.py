@@ -23,8 +23,8 @@ def task_logic(name):
 
 with DAG(
     dag_id="complex_branch_test_dag",
-    schedule_interval=None,
-    start_date=datetime(2026, 2, 13),
+    schedule_interval=@daily,
+    start_date=datetime(2026, 2, 23),
     catchup=False
 
    
