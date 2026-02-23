@@ -1,9 +1,9 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.utils.dates import days_ago
-from pendulum import datetime
+from datetime import datetime
 from datetime import timedelta
-#commentsasasssa
+#commentsasasssaasas
 default_args = {
     "owner": "pi-flow",
     "retries": 0,
@@ -18,7 +18,7 @@ def print_result(**context):
 
 with DAG(
     dag_id="simple_test_dag",
-    start_date=datetime(2026,2,23),
+    start_date=datetime.today(),
     schedule="@daily",
     catchup=False,
     default_args=default_args,
