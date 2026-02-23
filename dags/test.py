@@ -18,7 +18,7 @@ def print_result(**context):
 
 with DAG(
     dag_id="simple_test_dag",
-    start_date=datetime(2026.2,23),
+    start_date=datetime(2026,2,23),
     schedule="@daily",
     catchup=False,
     default_args=default_args,
