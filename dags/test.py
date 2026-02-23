@@ -1,6 +1,7 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.utils.dates import days_ago
+from datetime import datetime
 from datetime import timedelta
 #commentsasasss
 default_args = {
@@ -17,8 +18,8 @@ def print_result(**context):
 
 with DAG(
     dag_id="simple_test_dag",
-    start_date=days_ago(1),
-    schedule="@once",
+    start_date=datetime(2026,02,23),
+    schedule="@daily",
     catchup=False,
     default_args=default_args,
     tags=["test"],
