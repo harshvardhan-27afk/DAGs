@@ -30,9 +30,5 @@ with DAG(
     )
 
 
-    task_end = PythonOperator(
-        task_id="end_task",
-        python_callable=print_result,
-    )
 
-    task_start >> task_end
+    task_start 
