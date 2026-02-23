@@ -1,7 +1,7 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.utils.dates import days_ago
-from datetime import datetime
+from pendulum import datetime
 from datetime import timedelta
 #commentsasasss
 default_args = {
