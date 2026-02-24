@@ -1,14 +1,19 @@
 
-from dag_parser.dynamic.dag_context import DAG, PythonOperator
-from datetime import datetime
+# from dag_parser.dynamic.dag_context import DAG, PythonOperator
+# from datetime import datetime
+# from datetime import timedelta
+
+from airflow import DAG
+from airflow.operators.python import PythonOperator
+from airflow.utils.dates import days_ago
 from datetime import timedelta
-#commentsasasssaasasasaas
+
 default_args = {
     "owner": "pi-flow",
     "retries": 0,
     "retry_delay": timedelta(seconds=5),
 }
-#commentsasassds
+
 def hello_world():
     print("Hello from Pi-Flow!")
 
@@ -17,7 +22,7 @@ def print_result(**context):
 
 with DAG(
     dag_id="simple_test_dag",
-    start_date=datetime(2026,2,23),
+    start_date=datetime(2026,2,24),
     schedule="@daily",
     catchup=False,
     default_args=default_args,
@@ -25,10 +30,9 @@ with DAG(
 ) as dag:
 
     task_start = PythonOperator(
-        task_id="hello_task",
+        task_id="start_task",
         python_callable=hello_world,
     )
-
 
     task_end = PythonOperator(
         task_id="end_task",
@@ -36,3 +40,4 @@ with DAG(
     )
 
     task_start >> task_end
+
