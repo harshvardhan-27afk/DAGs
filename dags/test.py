@@ -1,6 +1,5 @@
-from airflow import DAG
-from airflow.operators.python import PythonOperator
-from airflow.utils.dates import days_ago
+
+from dag_parser.dynamic.dag_context import DAG, PythonOperator
 from datetime import datetime
 from datetime import timedelta
 #commentsasasssaasasasa
