@@ -1,12 +1,11 @@
 
 # from dag_parser.dynamic.dag_context import DAG, PythonOperator
 # from datetime import datetime
-# from datetime import timedelta
+# from datetime import timedeltax
 
-from airflow import DAG
-from airflow.operators.python import PythonOperator
-from airflow.utils.dates import days_ago
-from datetime import timedelta
+
+from dag_parser.dynamic.dag_context import DAG, PythonOperator
+from datetime import datetime
 
 default_args = {
     "owner": "pi-flow",
@@ -22,7 +21,7 @@ def print_result(**context):
 
 with DAG(
     dag_id="simple_test_dag",
-    start_date=datetime(2026,2,24),
+    start_date=datetime(2026,2,25),
     schedule="@daily",
     catchup=False,
     default_args=default_args,
