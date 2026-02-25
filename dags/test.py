@@ -10,7 +10,7 @@ from datetime import datetime
 default_args = {
     "owner": "pi-flow",
     "retries": 0,
-    "retry_delay": timedelta(seconds=5),
+    "retry_delay": 60,
 }
 
 def hello_world():
